@@ -108,3 +108,4 @@ def mainmenu():
         mainmenu()
 
 mainmenu()
+win.close()

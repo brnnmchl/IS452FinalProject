@@ -81,7 +81,9 @@ import time
 def main():
     win = GraphWin("Antelope")
     win.setCoords(0.0, 0.0, 3.0, 3.0)
-    Text(Point(1.5,0.5), "Is an antelope a document?").draw(win)
+    antelope = 'antelope'
+    dialog = str("Is an " + antelope + " a document?")
+    Text(Point(1.5,0.5), dialog).draw(win)
     Image(Point(1.5,1.75), 'antelope.gif').draw(win)
     time.sleep(30)
     win.close()

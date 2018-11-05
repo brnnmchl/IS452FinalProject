@@ -72,11 +72,12 @@ def prompt(prompt):
     return promptbloc
 
 def reply():
-    responsebloc = Entry(Point(5.375, 0.75), 20)
+    responsebloc = Entry(Point(5.375, 0.75), 30)
     responsebloc.setText('')
     responsebloc.setFill('white')
     responsebloc.draw(win)
     win.getMouse()
+    responsebloc.undraw()
     return responsebloc
 
 def playername():
@@ -90,25 +91,56 @@ def playername():
                  'by an elderly woman.'
     narration(narration1, 3)
 
-
     Image(Point(1.25, 3.75), 'agnes.gif').draw(win)
     agnesdialog1 = 'AGNES:\n\n' \
                    'Welcome to the Library.\n' \
                    'I am AGNES.\n' \
                    'What can I call you?'
-    dialog(agnesdialog1, 7)
+    dialog(agnesdialog1, 5)
 
-    prompt('What can I call you?')
-    name = reply()
-
+    nameprompt = prompt('Enter player name: >')
+    name = reply().getText()
+    nameprompt.undraw()
     return name
 
 def playerclass(name):
-    player_name = name.getText()
+    player_name = name
     agnesdialog2 = str("AGNES:\n\n" \
                    "It's a pleasure to meet you, \n" + player_name + '.')
-    dialog(agnesdialog2, 3)
+    agnesdialog3 = "AGNES:\n\n" \
+                   "This must be your first day.\n" \
+                   "Well, don't worry, we here at the\n" \
+                   "Library are all quite friendly.\n" \
+                   "I'm sure you'll enjoy working here."
+    agnesdialog4 = "AGNES:\n\n" \
+                   "What position are you starting today?"
+    agnesdialog5 = "AGNES:\n\n" \
+                   "Ah yes! We've been excited to have\n" \
+                   "you join us! I hope you'll have many\n" \
+                   "wonderful adventures while working here."
 
+    dialog(agnesdialog2, 3)
+    dialog(agnesdialog3, 5.5)
+    dialog(agnesdialog4, 3)
+    class_options = Text(Point(4.875, 2.875), 'Select one:\n\n'
+                                              'Cataloger\n'
+                                              'Subject Specialist\n'
+                                              'Archivist\n'
+                                              'Reference Librarian\n'
+                                              'Youth Services Librarian\n'
+                                              'Adult Services Librarian\n'
+                                              'Instruction Librarian')
+    class_options.setFace('courier')
+    class_options.setSize(20)
+    class_options.setStyle('italic')
+    class_options.draw(win)
+    positionprompt = prompt('Choose player class: >')
+    position = reply().getText()
+    positionprompt.undraw()
+    class_options.undraw()
+    dialog(agnesdialog5, 5.5)
+
+    return position
 
 player_name = playername()
 player_class = playerclass(player_name)

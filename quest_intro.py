@@ -43,16 +43,28 @@ def inventory(player_class):
         inventory = ['Your inventory seems to be a mystery...']
     return inventory
 
-def buttons():
+def textbox():
+    textbox = Rectangle(Point(2.25, 1.25), Point(7.5, 4.5))
+    textbox.setWidth(2)
+    textbox.draw(win)
+
+    return textbox
+
+def submit():
     submit_button = Text(Point(7.25, 0.625), "Submit")
     submit_button.setFace('courier')
     submit_button.draw(win)
     Rectangle(Point(7.0, 0.5), Point(7.5, 0.75)).draw(win)
 
+    return submit_button
+
+def exit():
     exit_button = Text(Point(0.75, 0.625), "Exit")
     exit_button.setFace('courier')
     exit_button.draw(win)
     Rectangle(Point(0.5, 0.5), Point(1.0, 0.75)).draw(win)
+
+    return exit_button
 
 def dialog(dialog, sleeptime):
     dialogbloc = Text(Point(4.875, 2.875), dialog)
@@ -90,11 +102,8 @@ def reply():
     return responsebloc
 
 def playername():
-    textbox = Rectangle(Point(2.25, 1.25), Point(7.5, 4.5))
-    textbox.setWidth(2)
-    textbox.draw(win)
-
-    buttons()
+    textbox()
+    submit()
 
     narration1 = 'You are greeted inside\n' \
                  'by an elderly woman.'
@@ -324,5 +333,6 @@ def startquest():
 
 player_name = playername()
 player_class = playerclass(player_name)
+invnetory = inventory(player_class)
 startquest()
 win.close()

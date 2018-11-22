@@ -30,27 +30,27 @@ spectacles = 'SPECTACLES OF COMPUTER SIGHT'
 mug = 'BOTTOMLESS MUG'
 bookcart = 'THOUSAND SHELF BOOKCART'
 
-player_name = "testname"
-player_class = 'testclass'
+player_name = "Brinna"
+player_class = 'cataloger'
 
 def inventory(player_class):
     if player_class == 'cataloger':
-        inventory = ['MLIS', 'Student Debt', 'One (1) printed copy of the full MARC21 documentation']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) printed copy of the\nfull MARC21 documentation']
     elif player_class == 'subject specialist':
-        inventory = ['MLIS', 'Student Debt', "One (1) Master's or Doctorate in a field no one else has heard of"]
+        player_inventory = ['MLIS', 'Student Debt', "One (1) Master's or Doctorate in\na field no one else has heard of"]
     elif player_class == 'archivist':
-        inventory = ['MLIS', 'Student Debt', 'One (1) pocket full of 60 year old paperclips and binderclips']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) pocket full of 60 year old\npaperclips and binderclips']
     elif player_class == 'reference librarian':
-        inventory = ['MLIS', 'Student Debt', 'One (1) enchanted Customer Service mask']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) enchanted Customer Service mask']
     elif player_class == 'youth services librarian':
-        inventory = ['MLIS', 'Student Debt', 'One (1) baggie of crafting supplies']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) baggie of crafting supplies']
     elif player_class == 'adult services librarian':
-        inventory = ['MLIS', 'Student Debt', 'One (1) "Computers for Dummies" book']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) "Computers for Dummies" book']
     elif player_class == 'instruction librarian':
-        inventory = ['MLIS', 'Student Debt', 'One (1) heavily annotated lesson plan']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) heavily annotated lesson plan']
     else:
-        inventory = ['Your inventory seems to be a mystery...']
-    return inventory
+        player_inventory = ['Notebook filled with strange symbols', 'Invisible pen', 'Arcane talisman']
+    return player_inventory
 
 def textbox():
     textbox = Rectangle(Point(2.25, 1.25), Point(7.5, 4.5))
@@ -109,6 +109,135 @@ def reply():
     win.getMouse()
     responsebloc.undraw()
     return responsebloc
+
+def puzzleone():
+    puzzlespace = Rectangle(Point(1.25, 2.25), Point(2.75, 3.75))
+    puzzlespace.setWidth(2)
+    puzzlespace.draw(win)
+
+    latline1 = Line(Point(0.75, 2.25), Point(2.75, 2.25))
+    latline2 = Line(Point(0.75, 2.75), Point(2.75, 2.75))
+    latline3 = Line(Point(0.75, 3.25), Point(2.75, 3.25))
+    latline4 = Line(Point(0.75, 3.75), Point(2.75, 3.75))
+    latline1.draw(win)
+    latline2.draw(win)
+    latline3.draw(win)
+    latline4.draw(win)
+
+    longline1 = Line(Point(1.25, 2.25), Point(1.25, 4.25))
+    longline2 = Line(Point(1.75, 2.25), Point(1.75, 4.25))
+    longline3 = Line(Point(2.25, 2.25), Point(2.25, 4.25))
+    longline4 = Line(Point(2.75, 2.25), Point(2.75, 4.25))
+    longline1.draw(win)
+    longline2.draw(win)
+    longline3.draw(win)
+    longline4.draw(win)
+
+    leftlabel1 = Text(Point(0.9, 3.5), 'Micro-\n'
+                                        'spatula')
+    leftlabel2 = Text(Point(0.9, 3), 'Cotton\n'
+                                        'gloves')
+    leftlabel3 = Text(Point(0.9, 2.5), 'Hollinger\n'
+                                        'box')
+    toplabel1 = Text(Point(1.5, 4), "BBNK")
+    toplabel2 = Text(Point(2, 4), "EAD")
+    toplabel3 = Text(Point(2.5, 4), "M.PLP")
+    leftlabel1.setFace('courier')
+    leftlabel2.setFace('courier')
+    leftlabel3.setFace('courier')
+    toplabel1.setFace('courier')
+    toplabel2.setFace('courier')
+    toplabel3.setFace('courier')
+    leftlabel1.draw(win)
+    leftlabel2.draw(win)
+    leftlabel3.draw(win)
+    toplabel1.draw(win)
+    toplabel2.draw(win)
+    toplabel3.draw(win)
+
+    hints = Text(Point(5.75, 4), "Materials have gone missing in the archive!\n"
+                                 "Who was last seen with these items?\n\n"
+                                 "1) Mr. Platt requested to view a record\n"
+                                 "series titled 'Photographic Subject File.'\n\n"
+                                 "2) Ed works for the preservation department\n"
+                                 "and does not box up materials.")
+    hints.setFace('courier')
+    hints.draw(win)
+
+    name1 = Text(Point(4.5, 3), "B.B.N. Knope >")
+    name2 = Text(Point(4.5, 2.5), "Ed A. Danvers >")
+    name3 = Text(Point(4.5, 2), "Mr. Percy L. Platt >")
+    name1.setFace('courier')
+    name2.setFace('courier')
+    name3.setFace('courier')
+    name1.draw(win)
+    name2.draw(win)
+    name3.draw(win)
+
+    answer1input = Entry(Point(6.5, 3), 15)
+    answer1input.setText('')
+    answer1input.setFill('white')
+    answer1input.draw(win)
+    win.getMouse()
+    answer1input.undraw()
+    answer1 = answer1input.getText().lower()
+    finalanswer1 = Text(Point(6.5, 3), answer1)
+    finalanswer1.setFace('courier')
+    finalanswer1.draw(win)
+
+    answer2input = Entry(Point(6.5, 2.5), 15)
+    answer2input.setText('')
+    answer2input.setFill('white')
+    answer2input.draw(win)
+    win.getMouse()
+    answer2input.undraw()
+    answer2 = answer2input.getText().lower()
+    finalanswer2 = Text(Point(6.5, 2.5), answer2)
+    finalanswer2.setFace('courier')
+    finalanswer2.draw(win)
+
+    answer3input = Entry(Point(6.5, 2), 15)
+    answer3input.setText('')
+    answer3input.setFill('white')
+    answer3input.draw(win)
+    win.getMouse()
+    answer3input.undraw()
+    answer3 = answer3input.getText().lower()
+    finalanswer3 = Text(Point(6.5, 2), answer3)
+    finalanswer3.setFace('courier')
+    finalanswer3.draw(win)
+
+    finish_puzzle = prompt('Click "Submit" to finish. >')
+
+    win.getMouse()
+
+    puzzlespace.undraw()
+    latline1.undraw()
+    latline2.undraw()
+    latline3.undraw()
+    latline4.undraw()
+    longline1.undraw()
+    longline2.undraw()
+    longline3.undraw()
+    longline4.undraw()
+    leftlabel1.undraw()
+    leftlabel2.undraw()
+    leftlabel3.undraw()
+    toplabel1.undraw()
+    toplabel2.undraw()
+    toplabel3.undraw()
+    hints.undraw()
+    name1.undraw()
+    name2.undraw()
+    name3.undraw()
+    finalanswer1.undraw()
+    finalanswer2.undraw()
+    finalanswer3.undraw()
+    finish_puzzle.undraw()
+
+    answers_one = [answer1, answer2, answer3]
+
+    return answers_one
 
 def archivistslair():
     narration5 = 'You walk cautiously down the stairs,\n' \
@@ -270,14 +399,115 @@ def archivistslair():
             knopedialog16 = "KNOPE:\n\n" \
                             "Excellent!"
             dialog(knopedialog16, 2.5)
+            archivist_pic.undraw()
+            textbox.undraw()
+            answers_one = puzzleone()
+            if answers_one == ['hollinger box', 'microspatula', 'cotton gloves']:
+                archivist_pic.draw(win)
+                textbox.draw(win)
+                knopedialog17 = "KNOPE:\n\n" \
+                                "Well, I must say, I wasn't sure you'd\n" \
+                                "figure that one out. Well done."
+                knopedialog18 = "KNOPE:\n\n" \
+                                "I suppose a deal is a deal... Here you go."
+                dialog(knopedialog17, 4)
+                dialog(knopedialog18, 3)
+                archivist_pic.undraw()
+
+                cardigan_pic.draw(win)
+                player_inventory.append(cardigan)
+                narration13 = "The CARDIGAN OF INVISIBILITY is now\n" \
+                              "in your inventory!"
+                narration(narration13, 4)
+
+                inventory_check = player_name.upper() + "'s Inventory\n\n" + player_inventory[0] + '\n' + player_inventory[1] + '\n' + player_inventory[2] + '\n' + player_inventory[3]
+                narration(inventory_check, 6)
+
+                cardigan_pic.undraw()
+
+                archivist_pic.draw(win)
+                knopedialog19 = "KNOPE:\n\n" \
+                                "If you're sure you want to continue, I'd\n" \
+                                "recommend looking for the next RELIC in the\n" \
+                                "CATALOGER'S DUNGEON."
+                dialog(knopedialog19, 5)
+                archivist_pic.undraw()
+
+                playerdialog7 = str(player_name.upper() + ":\n\n"
+                                              "Um... that sounds...")
+                dialog(playerdialog7, 2.5)
+
+                archivist_pic.draw(win)
+                knopedialog20 = "KNOPE:\n\n" \
+                                "Oh, i'ts just as terrifying as it\n" \
+                                "sounds. Don't worry."
+                knopedialog21 = "KNOPE:\n\n" \
+                                "But you'd best be running along now!\n" \
+                                "I've got far to much processing to do\n" \
+                                "to be babysitting a new " + player_class + "."
+                knopedialog22 = "KNOPE:\n\n" \
+                                "You'll find the stairs to the DUNGEON\n" \
+                                "over on the far wall there, behind some\n" \
+                                "stacks of film reels."
+                knopedialog23 = "KNOPE:\n\n" \
+                                "Good luck."
+                dialog(knopedialog20, 4)
+                dialog(knopedialog21, 5)
+                dialog(knopedialog22, 5)
+                dialog(knopedialog23, 2)
+                archivist_pic.undraw()
+
+                narration14 = "You watch as KNOPE seems to disappear\n" \
+                              "into the chaos of the archive."
+                narration15 = "Eager to move on, you head towards the\n" \
+                              "door and find it slightly ajar. A chill\n" \
+                              "seems to hover around it and you think\n" \
+                              "you can hear... something."
+                narration(narration14, 3.5)
+                narration(narration15, 6)
+
+                take_stairs = prompt("Descend the stairs? >")
+                take_stairs_reply = reply().getText().lower()
+                take_stairs.undraw()
+                if take_stairs_reply == "yes":
+                    dungeon_title = Image(Point(4, 2.5), 'dungeon.gif')
+                    dungeon_title.draw(win)
+                    time.sleep(4)
+                    dungeon_title.undraw()
+                else:
+                    narration16 = "The floor opens up beneath you\n" \
+                                  "and you are devoured by silverfish."
+                    narration(narration16, 3)
+                    mainmenu()
+            else:
+                narration17 = "You are magically bound to remain\n" \
+                              "in the archive until you have finished\n" \
+                              "processing the back log."
+                narration(narration17, 5)
+                mainmenu()
+        else:
+            narration18 = "In your attempt to flee, you trip\n" \
+                          "over a pile of boxes/papers and are\n" \
+                          "dragged by a horde of giggling archive\n" \
+                          "gnomes into the darkness. You are\n" \
+                          "never heard from again."
+            narration(narration18, 7)
+            mainmenu()
+    else:
+        narration19 = "You see something shiny on the\n" \
+                      "ground and bend to take a look. It's\n" \
+                      "a paper clip. There is another, not\n" \
+                      "to far away. Soon you have followed\n" \
+                      "the trail of paper clips into the gloom.\n" \
+                      "You are trapped. There is no way out."
+        narration(narration19, 8)
+        mainmenu()
+
+    return player_inventory
 
 
-
-
-
-
-inventory = inventory(player_class)
-textbox()
+player_inventory = inventory(player_class)
+textbox = textbox()
 submit()
-archivistslair()
+player_inventory = archivistslair()
 win.close()

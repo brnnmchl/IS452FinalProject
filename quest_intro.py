@@ -26,22 +26,22 @@ reference_pic = Image(Point(1.25, 3.75), 'reference.gif')
 
 def inventory(player_class):
     if player_class == 'cataloger':
-        inventory = ['MLIS', 'Student Debt', 'One (1) printed copy of the full MARC21 documentation']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) printed copy of the\nfull MARC21 documentation']
     elif player_class == 'subject specialist':
-        inventory = ['MLIS', 'Student Debt', "One (1) Master's or Doctorate in a field no one else has heard of"]
+        player_inventory = ['MLIS', 'Student Debt', "One (1) Master's or Doctorate in\na field no one else has heard of"]
     elif player_class == 'archivist':
-        inventory = ['MLIS', 'Student Debt', 'One (1) pocket full of 60 year old paperclips and binderclips']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) pocket full of 60 year old\npaperclips and binderclips']
     elif player_class == 'reference librarian':
-        inventory = ['MLIS', 'Student Debt', 'One (1) enchanted Customer Service mask']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) enchanted Customer Service mask']
     elif player_class == 'youth services librarian':
-        inventory = ['MLIS', 'Student Debt', 'One (1) baggie of crafting supplies']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) baggie of crafting supplies']
     elif player_class == 'adult services librarian':
-        inventory = ['MLIS', 'Student Debt', 'One (1) "Computers for Dummies" book']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) "Computers for Dummies" book']
     elif player_class == 'instruction librarian':
-        inventory = ['MLIS', 'Student Debt', 'One (1) heavily annotated lesson plan']
+        player_inventory = ['MLIS', 'Student Debt', 'One (1) heavily annotated lesson plan']
     else:
-        inventory = ['Your inventory seems to be a mystery...']
-    return inventory
+        player_inventory = ['Your inventory seems to be a mystery...']
+    return player_inventory
 
 def textbox():
     textbox = Rectangle(Point(2.25, 1.25), Point(7.5, 4.5))
@@ -107,14 +107,14 @@ def playername():
 
     narration1 = 'You are greeted inside\n' \
                  'by an elderly woman.'
-    narration(narration1, 3)
+    narration(narration1, 3.5)
 
     agnes_pic.draw(win)
     agnesdialog1 = 'AGNES:\n\n' \
                    'Welcome to the Library.\n' \
                    'I am AGNES.\n' \
                    'What can I call you?'
-    dialog(agnesdialog1, 5)
+    dialog(agnesdialog1, 5.5)
 
     nameprompt = prompt('Enter player name: >')
     name = reply().getText()
@@ -138,7 +138,7 @@ def playerclass(name):
                    "wonderful adventures while working here."
 
     dialog(agnesdialog2, 3.5)
-    dialog(agnesdialog3, 6)
+    dialog(agnesdialog3, 7)
     dialog(agnesdialog4, 3.5)
     class_options = Text(Point(4.875, 2.875), 'Select one:\n\n'
                                               'Cataloger\n'
@@ -157,25 +157,25 @@ def playerclass(name):
     positionprompt.undraw()
     class_options.undraw()
 
-    dialog(agnesdialog5, 6)
+    dialog(agnesdialog5, 8)
     narration2 = 'You hear a loud crash and both\n' \
                  'you and AGNES turn to see a young\n' \
                  'man rushing towards you.'
     agnes_pic.undraw()
-    narration(narration2, 4.5)
+    narration(narration2, 6)
 
     agnes_pic.draw(win)
     agnesdialog6 = 'AGNES:\n\n' \
                    'Oh my! CLARENCE,\n' \
                    'what is going on?'
-    dialog(agnesdialog6, 3.5)
+    dialog(agnesdialog6, 4)
     agnes_pic.undraw()
     clarence_pic.draw(win)
 
     clarencedialog1 = "CLARENCE:\n\n" \
                       "It's terrible, AGNES!\n" \
                       "The dean has finally made his decision!"
-    dialog(clarencedialog1, 3.5)
+    dialog(clarencedialog1, 4.5)
 
     clarence_pic.undraw()
     agnes_pic.draw(win)
@@ -192,8 +192,8 @@ def playerclass(name):
     clarencedialog3 = "CLARENCE:\n\n" \
                       "DEAN PATRICK ARCHY has already\n" \
                       "locked it in the ADMIN'S TOWER!"
-    dialog(clarencedialog2, 5.5)
-    dialog(clarencedialog3, 3.5)
+    dialog(clarencedialog2, 7)
+    dialog(clarencedialog3, 5)
 
     clarence_pic.undraw()
     agnes_pic.draw(win)
@@ -202,7 +202,7 @@ def playerclass(name):
                    "and with the LIBRARY RELICS\n" \
                    "scattered throughout the Library...\n" \
                    "Whatever shall we do?"
-    dialog(agnesdialog8, 5.5)
+    dialog(agnesdialog8, 7)
 
     agnes_pic.undraw()
     clarence_pic.draw(win)
@@ -213,13 +213,13 @@ def playerclass(name):
                       "If you can gather the LIBRARY RELICS\n" \
                       "and destroy the TOME OF LENDING,\n" \
                       "we might be able to stop this madness!"
-    dialog(clarencedialog4, 3.5)
-    dialog(clarencedialog5, 6)
+    dialog(clarencedialog4, 4.5)
+    dialog(clarencedialog5, 8)
 
     clarence_pic.undraw()
     playerdialog1 = str(player_name.upper() + ":\n\n" \
                                   "The LIBRARY RELICS?")
-    dialog(playerdialog1, 2.5)
+    dialog(playerdialog1, 3)
 
     clarence_pic.draw(win)
     clarencedialog6 = "CLARENCE:\n\n" \
@@ -230,8 +230,8 @@ def playerclass(name):
                       "the SPECTACLES OF COMPUTER SIGHT,\n" \
                       "the BOTTOMLESS MUG,\n" \
                       "and the THOUSAND SHELF BOOKCART."
-    dialog(clarencedialog6, 4.5)
-    dialog(clarencedialog7, 6)
+    dialog(clarencedialog6, 5.5)
+    dialog(clarencedialog7, 8)
 
     clarence_pic.undraw()
     agnes_pic.draw(win)
@@ -243,7 +243,7 @@ def playerclass(name):
     agnesdialog10 = "AGNES:\n\n" \
                    "You will face many dangers and\n" \
                    "encounter many traps along the way."
-    dialog(agnesdialog9, 6.5)
+    dialog(agnesdialog9, 8)
     dialog(agnesdialog10, 4.5)
 
     return position
@@ -251,7 +251,7 @@ def playerclass(name):
 def startquest():
     agnesdialog11 = str("AGNES:\n\n" + player_name + ", will you\n" \
                                                  "take on this quest?")
-    dialog(agnesdialog11, 3.5)
+    dialog(agnesdialog11, 4.5)
     agnes_pic.undraw()
 
     takethequest = prompt("Take the quest? >")
@@ -265,8 +265,8 @@ def startquest():
                     "Oh, thank you, thank you!"
         agnesdialog13 = "AGNES:\n\n" \
                     "But you must hurry!"
-        dialog(agnesdialog12, 2.5)
-        dialog(agnesdialog13, 2.5)
+        dialog(agnesdialog12, 3)
+        dialog(agnesdialog13, 3)
 
         narration3 = "AGNES points towards a stone archway\n" \
                  "where you can see a flight of stairs\n" \
@@ -274,19 +274,19 @@ def startquest():
                  "A cool, musty smelling breeze wafts\n" \
                  "out of it and you feel a little\n" \
                  "shiver of fear."
-        narration(narration3, 6.5)
+        narration(narration3, 9)
 
         agnesdialog14 = "AGNES:\n\n" \
                     "Down those stairs you will find the\n" \
                     "ARCHIVIST'S LAIR. There you will\n" \
                     "find the CARDIGAN OF INVISIBILITY."
-        dialog(agnesdialog14, 5.5)
+        dialog(agnesdialog14, 6.5)
 
         agnes_pic.undraw()
         clarence_pic.draw(win)
         clarencedialog8 = str("CLARENCE:\n\n" \
                       "Good luck, " + player_name + '.')
-        dialog(clarencedialog8, 2.5)
+        dialog(clarencedialog8, 3)
 
         clarence_pic.undraw()
 
@@ -299,7 +299,7 @@ def startquest():
                  "this. This is what all those\n" \
                  "MLIS classes have prepared you\n" \
                  "for. You walk over to the archway."
-        narration(narration4, 5.5)
+        narration(narration4, 8)
 
         takestairs_p = prompt("Descend the stairs? >")
         takestairs_r = reply()
@@ -316,7 +316,7 @@ def startquest():
             nostairs.setFace('courier')
             nostairs.setStyle('italic')
             nostairs.draw(win)
-            time.sleep(5)
+            time.sleep(6.5)
             nostairs.undraw()
             mainmenu()
     else:
@@ -333,6 +333,6 @@ def startquest():
 
 player_name = playername()
 player_class = playerclass(player_name)
-invnetory = inventory(player_class)
+player_inventory = inventory(player_class)
 startquest()
 win.close()

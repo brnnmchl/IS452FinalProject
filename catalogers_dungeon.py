@@ -282,10 +282,10 @@ def catalogersdungeon():
                   "sign dangling from one screw in the upper\n" \
                   "right corner reading,\n\n" \
                   "'Catalog at your own risk.'"
-    narration(narration20, 4)
-    narration(narration21, 7)
+    narration(narration20, 5)
+    narration(narration21, 8)
     narration(narration22, 3)
-    narration(narration23, 8)
+    narration(narration23, 9)
 
     open_door = prompt("Open the door? >")
     open_door_reply = reply().getText().lower()
@@ -322,14 +322,14 @@ def catalogersdungeon():
 
         playerdialog8 = str(player_name.upper() + ":\n\n"
                                               "I-I'm on a quest.")
-        dialog(playerdialog8, 2.5)
+        dialog(playerdialog8, 3)
 
         cataloger_pic.draw(win)
         gherdialog2 = "???:\n\n" \
                       "A quest? We don't have time for\n" \
                       "quests! There are materials that\n" \
                       "need describing!"
-        dialog(gherdialog2, 4)
+        dialog(gherdialog2, 5)
         cataloger_pic.undraw()
 
         playerdialog9 = str(player_name.upper() + ":\n\n"
@@ -337,13 +337,13 @@ def catalogersdungeon():
                                                   "you long. I'm just trying to collect\n"
                                                   "the LIBRARY RELICS to destroy the\n"
                                                   "TOME OF LENDING.")
-        dialog(playerdialog9, 6)
+        dialog(playerdialog9, 7)
 
         cataloger_pic.draw(win)
         narration30 = "The cataloger raises an eyebrow. You\n" \
                       "think they might be glaring at you, but\n" \
                       "you can't be sure."
-        narration(narration30, 6)
+        narration(narration30, 7)
 
         gherdialog3 = "???:\n\n" \
                       "You must mean the SPECTACLES OF\n" \
@@ -353,25 +353,25 @@ def catalogersdungeon():
 
         playerdialog10 = str(player_name.upper() + ":\n\n"
                                               "Um... sure. Yes. Those.")
-        dialog(playerdialog10, 2.5)
+        dialog(playerdialog10, 3)
 
         cataloger_pic.draw(win)
         gherdialog4 = "???:\n\n" \
                       "The SPECTACLES are sacred to us\n" \
                       "catalogers. We won't part with them\n" \
                       "easily, not even for a quest like this."
-        dialog(gherdialog4, 7)
+        dialog(gherdialog4, 7.5)
         cataloger_pic.undraw()
 
         playerdialog11 = str(player_name.upper() + ":\n\n"
                                               "Please! I just want to help\n"
                                                    "our patrons!")
-        dialog(playerdialog11, 3)
+        dialog(playerdialog11, 4)
 
         cataloger_pic.draw(win)
         narration31 = "The cataloger stares at you\n" \
                       "unnervingly."
-        narration(narration31, 3)
+        narration(narration31, 4)
         gherdialog5 = "???:\n\n" \
                       "I suppose I might be able to... work\n" \
                       "something out. But you won't get them\n" \
@@ -391,7 +391,7 @@ def catalogersdungeon():
                       "give you the SPECTACLES. Sound fair?"
         dialog(gherdialog5, 6)
         dialog(gherdialog6, 5)
-        dialog(gherdialog7, 8)
+        dialog(gherdialog7, 9)
         dialog(gherdialog8, 7)
         cataloger_pic.undraw()
 
@@ -401,7 +401,7 @@ def catalogersdungeon():
         if play_puzzle_reply == "yes":
             playerdialog12 = str(player_name.upper() + ":\n\n"
                                               "I'll do my best.")
-            dialog(playerdialog12, 2.5)
+            dialog(playerdialog12, 3)
             textbox.undraw()
             answers_two = puzzletwo()
             if answers_two == ['rare books', 'serials', 'monographs', 'music']:
@@ -413,18 +413,18 @@ def catalogersdungeon():
                 gherdialog10 = "GHER:\n\n" \
                                "Well, I suppose you earned this.\n" \
                                "Here."
-                dialog(gherdialog9, 3)
-                dialog(gherdialog10, 3)
+                dialog(gherdialog9, 4)
+                dialog(gherdialog10, 4)
                 cataloger_pic.undraw()
 
                 spectacles_pic.draw(win)
                 player_inventory.append(spectacles)
                 narration34 = "The SPECTACLES OF COMPUTER SIGHT\n" \
                               "are now in your inventory!"
-                narration(narration34, 3)
+                narration(narration34, 4)
 
                 inventory_check = player_name.upper() + "'s Inventory\n\n" + player_inventory[0] + '\n' + player_inventory[1] + '\n' + player_inventory[2] + '\n' + player_inventory[3] + '\n' + player_inventory[4]
-                narration(inventory_check, 6)
+                narration(inventory_check, 9)
                 spectacles_pic.undraw()
 
                 cataloger_pic.draw(win)
@@ -439,7 +439,7 @@ def catalogersdungeon():
                 gherdialog13 = "GHER:\n\n" \
                                "Any question you have, I guarantee\n" \
                                "they've got the answer."
-                dialog(gherdialog11, 6)
+                dialog(gherdialog11, 6.5)
                 dialog(gherdialog12, 7)
                 dialog(gherdialog13, 5.5)
 
@@ -456,7 +456,7 @@ def catalogersdungeon():
                               "to step forward."
                 narration(narration35, 7)
                 narration(narration36, 8)
-                narration(narration37, 6)
+                narration(narration37, 7)
 
                 gherdialog14 = "GHER:\n\n" \
                                "In you go. I recommend you talk to\n" \
@@ -475,7 +475,7 @@ def catalogersdungeon():
                 if through_portal_reply == 'yes':
                     tavern_title = Image(Point(4, 2.5), 'tavern.gif')
                     tavern_title.draw(win)
-                    time.sleep(4)
+                    time.sleep(5)
                     tavern_title.undraw()
                 else:
                     narration38 = "You feel a hand on your back and\n" \
@@ -492,7 +492,7 @@ def catalogersdungeon():
                           "longer a door behind you. A pair of\n" \
                           "glasses descends in front of your eyes\n" \
                           "and you know no more."
-                narration(narration33, 10)
+                narration(narration33, 12)
                 mainmenu()
         else:
             narration32 = "Gher grins eerily and the sound of\n" \
@@ -502,14 +502,14 @@ def catalogersdungeon():
                           "longer a door behind you. A pair of\n" \
                           "glasses descends in front of your eyes\n" \
                           "and you know no more."
-            narration(narration32, 10)
+            narration(narration32, 12)
             mainmenu()
     else:
         narration24 = "You hear a sound much like a muffled\n" \
                       "scream. Shadowy hands suddenly burst\n" \
                       "from the rough stone walls and you are\n" \
                       "dragged into the darkness."
-        narration(narration24, 7)
+        narration(narration24, 8)
         mainmenu()
 
     return player_inventory

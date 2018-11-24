@@ -14,27 +14,21 @@ outline2.setWidth(5)
 outline2.draw(win)
 outline1.draw(win)
 
-def buttons():
+def submit():
     submit_button = Text(Point(7.25, 0.625), "Submit")
     submit_button.setFace('courier')
     submit_button.draw(win)
     Rectangle(Point(7.0, 0.5), Point(7.5, 0.75)).draw(win)
 
+    return submit_button
+
+def exit():
     exit_button = Text(Point(0.75, 0.625), "Exit")
     exit_button.setFace('courier')
     exit_button.draw(win)
     Rectangle(Point(0.5, 0.5), Point(1.0, 0.75)).draw(win)
 
-    # ll = Point(0.5, 0.5)
-    # ur = Point(1.0, 0.75)
-    #
-    # clickPoint = win.getMouse()
-    # if clickPoint in ll.getX() < clickPoint.getX() < ur.getX() and ll.getY() < clickPoint.getY() < ur.getY():
-    #     start_screen.draw(win)
-    #     play_button.draw(win)
-    # else:
-    #     enter_lib.undraw()
-    #     inputText.undraw()
+    return exit_button
 
 
 def mainmenu():
@@ -65,7 +59,7 @@ def mainmenu():
     intro.setStyle('italic')
     intro.setSize(20)
     intro.draw(win)
-    time.sleep(5)
+    time.sleep(10)
 
     intro.undraw()
     enter_lib = Text(Point(3.0, 2.5), "Open the door? >")
@@ -77,7 +71,7 @@ def mainmenu():
     inputText.draw(win)
     enter_lib.draw(win)
 
-    buttons()
+    submit()
 
     win.getMouse()
 
@@ -89,7 +83,7 @@ def mainmenu():
         title_scene.setFace("courier")
         title_scene.setSize(20)
         title_scene.draw(win)
-        time.sleep(2)
+        time.sleep(2.5)
 
         title_scene.undraw()
         Image(Point(4.0, 2.5), 'logo.gif').draw(win)
@@ -103,7 +97,7 @@ def mainmenu():
         premature_rage_quit.setFace("courier")
         premature_rage_quit.setSize(20)
         premature_rage_quit.draw(win)
-        time.sleep(7)
+        time.sleep(8)
         premature_rage_quit.undraw()
         mainmenu()
 

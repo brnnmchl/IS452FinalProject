@@ -252,9 +252,9 @@ def archivistslair():
                  '“Archives: Beware all ye who enter here.”\n\n' \
                  'Taking a steadying breath, you reach\n' \
                  'for the door…'
-    narration(narration5, 6.5)
-    narration(narration6, 5.5)
-    narration(narration7, 7.5)
+    narration(narration5, 7)
+    narration(narration6, 7)
+    narration(narration7, 8)
 
     archivedoor = prompt('Open the door? >')
     opendoor = reply().getText().lower()
@@ -270,9 +270,9 @@ def archivistslair():
                      'of paper and memorabilia.'
         narration10 = 'A sudden shuffling sound to your left\n' \
                      'makes you start in alarm.'
-        narration(narration8, 6)
-        narration(narration9, 6)
-        narration(narration10, 3)
+        narration(narration8, 7)
+        narration(narration9, 7)
+        narration(narration10, 4)
 
         archivist_pic.draw(win)
         knopedialog1 = '???:\n\n' \
@@ -288,14 +288,14 @@ def archivistslair():
                      'paper cuts on his hands.'
         narration12 = 'You’ve read about people like this\n' \
                      'man before… Archivists.'
-        dialog(knopedialog1, 6.5)
-        narration(narration11, 7.5)
-        narration(narration12, 3.5)
+        dialog(knopedialog1, 7.5)
+        narration(narration11, 8.5)
+        narration(narration12, 4)
         archivist_pic.undraw()
 
         playerdialog3 = str(player_name.upper() + ":\n\n"
                                               "I'm " + player_name + ", the new\n" + player_class + ".")
-        dialog(playerdialog3, 3.5)
+        dialog(playerdialog3, 4)
 
         archivist_pic.draw(win)
         knopedialog2 = "???:\n\n" \
@@ -320,24 +320,24 @@ def archivistslair():
         knopedialog7 = "KNOPE:\n\n" \
                        "So... do you have a minute?\n" \
                        "Hour? Day? Year or ten to spare?"
-        dialog(knopedialog2, 5)
-        dialog(knopedialog3, 4.5)
-        dialog(knopedialog4, 4)
-        dialog(knopedialog5, 5.5)
-        dialog(knopedialog6, 5)
-        dialog(knopedialog7, 4)
+        dialog(knopedialog2, 6)
+        dialog(knopedialog3, 5.5)
+        dialog(knopedialog4, 5)
+        dialog(knopedialog5, 6.5)
+        dialog(knopedialog6, 6)
+        dialog(knopedialog7, 5)
         archivist_pic.undraw()
 
         playerdialog4 = str(player_name.upper() + ":\n\n"
                                               "Um... no. Not really,\n"
                                               "but I'll keep it in mind.")
-        dialog(playerdialog4, 3.5)
+        dialog(playerdialog4, 4)
 
         archivist_pic.draw(win)
         knopedialog8 = "KNOPE:\n\n" \
                        "Pity. It was worth a try.\n" \
                        "So, what can I help you with?"
-        dialog(knopedialog8, 3.5)
+        dialog(knopedialog8, 4)
         archivist_pic.undraw()
 
         playerdialog5 = str(player_name.upper() + ":\n\n"
@@ -345,7 +345,7 @@ def archivistslair():
                                                   "LIBRARY RELICS in order to destroy\n"
                                                   "the TOME OF LENDING. AGNES told me\n"
                                                   "I would find one of them here.")
-        dialog(playerdialog5, 5)
+        dialog(playerdialog5, 6.5)
 
         archivist_pic.draw(win)
         knopedialog9 = "KNOPE:\n\n" \
@@ -357,17 +357,17 @@ def archivistslair():
         knopedialog10 = "KNOPE\n\n" \
                         "Did you even submit a materials request\n" \
                         "before you came down here?"
-        dialog(knopedialog9, 6.5)
+        dialog(knopedialog9, 7)
         dialog(knopedialog10, 4.5)
         archivist_pic.undraw()
 
         playerdialog5 = str(player_name.upper() + ":\n\n"
                                               "Look, it's really important.")
-        dialog(playerdialog5, 3)
+        dialog(playerdialog5, 4)
 
         archivist_pic.draw(win)
         knopedialog11 = "KNOPE:\n\n" \
-                        "I'm sure it is, but stil..."
+                        "I'm sure it is, but still..."
         knopedialog12 = "KNOPE:\n\n" \
                         "Oh! I've got it!"
         knopedialog13 = "KNOPE:\n\n" \
@@ -382,9 +382,9 @@ def archivistslair():
                         "Have we got a deal?"
         dialog(knopedialog11, 3)
         dialog(knopedialog12, 3)
-        dialog(knopedialog13, 4)
-        dialog(knopedialog14, 4.5)
-        dialog(knopedialog15, 3)
+        dialog(knopedialog13, 5)
+        dialog(knopedialog14, 6)
+        dialog(knopedialog15, 4)
         archivist_pic.undraw()
 
         archivepuzzle = prompt('Play the puzzle? >')
@@ -410,7 +410,7 @@ def archivistslair():
                                 "figure that one out. Well done."
                 knopedialog18 = "KNOPE:\n\n" \
                                 "I suppose a deal is a deal... Here you go."
-                dialog(knopedialog17, 4)
+                dialog(knopedialog17, 5)
                 dialog(knopedialog18, 3)
                 archivist_pic.undraw()
 
@@ -418,10 +418,10 @@ def archivistslair():
                 player_inventory.append(cardigan)
                 narration13 = "The CARDIGAN OF INVISIBILITY is now\n" \
                               "in your inventory!"
-                narration(narration13, 4)
+                narration(narration13, 5)
 
                 inventory_check = player_name.upper() + "'s Inventory\n\n" + player_inventory[0] + '\n' + player_inventory[1] + '\n' + player_inventory[2] + '\n' + player_inventory[3]
-                narration(inventory_check, 6)
+                narration(inventory_check, 8)
 
                 cardigan_pic.undraw()
 
@@ -430,12 +430,12 @@ def archivistslair():
                                 "If you're sure you want to continue, I'd\n" \
                                 "recommend looking for the next RELIC in the\n" \
                                 "CATALOGER'S DUNGEON."
-                dialog(knopedialog19, 5)
+                dialog(knopedialog19, 6.5)
                 archivist_pic.undraw()
 
                 playerdialog7 = str(player_name.upper() + ":\n\n"
                                               "Um... that sounds...")
-                dialog(playerdialog7, 2.5)
+                dialog(playerdialog7, 3)
 
                 archivist_pic.draw(win)
                 knopedialog20 = "KNOPE:\n\n" \
@@ -451,10 +451,10 @@ def archivistslair():
                                 "stacks of film reels."
                 knopedialog23 = "KNOPE:\n\n" \
                                 "Good luck."
-                dialog(knopedialog20, 4)
-                dialog(knopedialog21, 5)
-                dialog(knopedialog22, 5)
-                dialog(knopedialog23, 2)
+                dialog(knopedialog20, 5)
+                dialog(knopedialog21, 7)
+                dialog(knopedialog22, 7)
+                dialog(knopedialog23, 3)
                 archivist_pic.undraw()
 
                 narration14 = "You watch as KNOPE seems to disappear\n" \
@@ -463,8 +463,8 @@ def archivistslair():
                               "door and find it slightly ajar. A chill\n" \
                               "seems to hover around it and you think\n" \
                               "you can hear... something."
-                narration(narration14, 3.5)
-                narration(narration15, 6)
+                narration(narration14, 4.5)
+                narration(narration15, 7.5)
 
                 take_stairs = prompt("Descend the stairs? >")
                 take_stairs_reply = reply().getText().lower()
@@ -472,18 +472,18 @@ def archivistslair():
                 if take_stairs_reply == "yes":
                     dungeon_title = Image(Point(4, 2.5), 'dungeon.gif')
                     dungeon_title.draw(win)
-                    time.sleep(4)
+                    time.sleep(5)
                     dungeon_title.undraw()
                 else:
                     narration16 = "The floor opens up beneath you\n" \
                                   "and you are devoured by silverfish."
-                    narration(narration16, 3)
+                    narration(narration16, 5)
                     mainmenu()
             else:
                 narration17 = "You are magically bound to remain\n" \
                               "in the archive until you have finished\n" \
                               "processing the back log."
-                narration(narration17, 5)
+                narration(narration17, 7)
                 mainmenu()
         else:
             narration18 = "In your attempt to flee, you trip\n" \
@@ -491,7 +491,7 @@ def archivistslair():
                           "dragged by a horde of giggling archive\n" \
                           "gnomes into the darkness. You are\n" \
                           "never heard from again."
-            narration(narration18, 7)
+            narration(narration18, 9)
             mainmenu()
     else:
         narration19 = "You see something shiny on the\n" \
@@ -500,7 +500,7 @@ def archivistslair():
                       "to far away. Soon you have followed\n" \
                       "the trail of paper clips into the gloom.\n" \
                       "You are trapped. There is no way out."
-        narration(narration19, 8)
+        narration(narration19, 10)
         mainmenu()
 
     return player_inventory

@@ -1,0 +1,698 @@
+AGNES:
+
+Welcome to the Library.
+I am AGNES.
+What can I call you?
+
+
+AGNES:
+
+This must be your first day.
+Well, don't worry, we here at the
+Library are all quite friendly.
+I'm sure you'll enjoy working here.
+
+
+AGNES:
+
+What position are you starting today?
+
+
+AGNES:
+
+Ah yes! We've been excited to have
+you join us! I hope you'll have many
+wonderful adventures while working here.
+
+
+AGNES:
+
+Oh my! CLARENCE,
+what is going on?
+
+
+CLARENCE:
+
+It's terrible, AGNES!
+The dean has finally made his decision!
+
+
+AGNES:
+
+No! It can't be!
+
+
+CLARENCE:
+
+Unfortunately it's true. We're going to
+be tracking patrons' borrowing history
+in the TOME OF LENDING!
+
+
+CLARENCE:
+
+DEAN PATRICK ARCHY has already
+locked it in the ADMIN'S TOWER!
+
+
+AGNES:
+
+Oh, i'ts too horrible...
+and with the LIBRARY RELIC S
+scattered throughout the Library...
+Whatever shall we do?
+
+
+CLARENCE:
+
+There might still be a chance!
+
+
+CLARENCE:
+
+If you can gather the LIBRARY RELICS
+and destroy the TOME OF LENDING,
+we might be able to stop this madness!
+
+
+CLARENCE:
+
+Four magical treasures that grant
+the user incredible powers.
+
+CLARENCE:
+
+The CARDIGAN OF INVISIBILITY,
+the SPECTACLES OF COMPUTER SIGHT,
+the BOTTOMLESS MUG,
+and the THOUSAND SHELF BOOKCART.
+
+
+AGNES:
+
+But the RELICS have been scattered
+throughout the Library for many
+years, and it will be no small task
+to find them all.
+
+
+AGNES:
+
+You will face many dangers and
+encounter many traps along the way.
+
+
+AGNES:
+
+Oh, thank you, thank you!
+
+
+AGNES:
+
+But you must hurry!
+
+
+AGNES:
+
+Down those stairs you will find the
+ARCHIVIST'S LAIR. There you will
+find the CARDIGAN OF INVISIBILITY.
+
+
+???:
+
+Ah... what do we have here? What
+unsuspecting victi- I mean, potential
+researcher has found their way into
+my humble archive?
+
+
+???:
+
+Oh! How exciting! It's been so long
+since we've welcomed a new member into
+our little family here at the Library.
+
+
+???:
+
+And after what happened to your poor
+predecessor, well...
+
+
+???:
+
+But where are my manners?I! I am
+B. B. N. Knope, the Archivist.
+
+
+KNOPE:
+
+You wouldn't, perchance, have been sent
+down to do a little bit of processing,
+would you?
+
+
+KNOPE:
+
+You know, we're always buried under
+a backlog, with new materials coming
+in every day... It's a nightmare!
+
+
+KNOPE:
+
+So... do you have a minute?
+Hour? Day? Year or ten to spare?
+
+
+KNOPE:
+
+Pity. It was worth a try.
+So, what can I help you with?
+
+
+KNOPE:
+
+Did you even submit a materials request
+before you came down here?
+
+
+KNOPE:
+
+I'm sure it is, but still...
+
+
+KNOPE:
+
+Oh! I've got it!
+
+
+KNOPE:
+
+Help me solve a little... missing
+materials problem, and I'll give you
+the RELIC.
+
+
+KNOPE:
+
+Buuuut... if you can't solve the puzzle,
+you'll have to stay here and process our
+backlog.
+
+
+KNOPE:
+
+Have we got a deal?
+
+
+KNOPE:
+
+Excellent!
+
+
+KNOPE:
+
+Well, I must say, I wasn't sure you'd
+figure that one out. Well done.
+
+
+KNOPE:
+
+I suppose a deal is a deal... Here you go.
+
+
+KNOPE:
+
+If you're sure you want to continue, I'd
+recommend looking for the next RELIC in the
+CATALOGER'S DUNGEON.
+
+
+KNOPE:
+
+Oh, it's just as terrifying as it
+sounds. Don't worry.
+
+
+KNOPE:
+
+You'll find the stairs to the DUNGEON
+over on the far wall there, behind some
+stacks of film reels.
+
+
+KNOPE:
+
+Good luck.
+
+
+???:
+
+What are you doing here?
+
+
+???:
+
+A quest? We don't have time for
+quests! There are materials that
+need describing!
+
+
+???:
+
+You must mean the SPECTACLES OF
+COMPUTER SIGHT.
+
+
+???:
+
+The SPECTACLES are sacred to us
+catalogers. We won't part with them
+easily, not even for a quest like this.
+
+
+???:
+
+I suppose I might be able to... work
+something out. But you won't get them
+for free!
+
+
+GHER:
+
+I am VOYA GHER, Head Cataloging Tactician
+and Metadata Strategist.
+
+
+GHER:
+
+As I mentioned, we are very busy here
+and after the debacle that was the last
+OCLC undercover retrieval mission we've
+had some... unexpected downsizing in our
+ranks.
+
+
+GHER:
+
+If you can help me deliver these new
+materials to the proper cataloger, I'll
+give you the SPECTACLES. Sound fair?
+
+
+GHER:
+
+You'd make a pretty good
+cataloging peon...
+
+
+GHER:
+
+Well, I suppose you earned this.
+Here.
+
+
+GHER:
+
+If ithe situation is as dire as you
+make it sound, you'd probably best
+get a move on.
+
+
+GHER:
+
+I'll let you use my interdepartmental
+portal, if you like. It'll take you
+right outside the REFERENCE TAVERN.
+
+
+GHER:
+
+Any question you have, I guarantee
+they've got the answer.
+
+
+GHER:
+
+In you go. I recommend you talk to 
+VIEU PHIND. She can help you locate
+the next RELIC.
+
+
+???:
+
+Welcome to the REFERENCE TAVERN!
+
+
+PHIND:
+
+I'm VIEU PHIND.
+How can I help you today?
+
+
+PHIND:
+
+A quest! How exciting!
+What is your quest?
+
+
+PHIND:
+
+I see. That's a tricky task you have
+there. Where have you looked so far?
+
+
+PHIND:
+
+That's great! Archives have many excellent
+resources. How else have you approached
+your search?
+
+
+PHIND:
+
+Fantastic! Since catalogers are
+responsible for creating records so
+that users can find materials in the
+Library, they are excellent comrades
+when designing a search strategy.
+
+
+PHIND:
+
+You seem to be doing well in you
+search so far. Tell me a little
+more about your quest.
+
+
+PHIND:
+
+Oh! VOYA sent you?! They are such a
+sweetheart!
+
+
+PHIND:
+
+Well, if VOYA sent you, it must be
+very urgent, your quest.
+
+
+PHIND:
+
+So you're looking for the next
+LIBRARY RELIC... Let me see...
+
+
+PHIND:
+
+The first thing to do is open up the
+Library catalog. Up at the top of the
+page, you'll see a search box.
+
+
+PHIND:
+
+Let's try typing in 'library' AND 'relic'
+to see what we have in our holdings.
+
+
+PHIND:
+
+Oh! Look at that! It looks like we have
+four LIBRARY RELICS. Two of them are
+checked out, but it looks like the other
+two are available.
+
+
+PHIND:
+
+Let's see... Looks like the THOUSAND SHELF
+BOOKCART is the CASTLE OF STACKS and the 
+BOTTOMLESS MUG is...
+
+
+PHIND:
+
+Oh! Well, I guess it's your lucky day. It
+seems the BOTTOMLESS MUG is here at the
+REFERENCE TAVERN!
+
+
+PHIND:
+
+Hmm... it seems it's a
+non-circulating item...
+
+
+PHIND:
+
+Well... I suppose I might be able to make
+an exception... But I'll need a favor from
+you first.
+
+
+PHIND:
+
+I've got some patrons on chat that need
+database recommendations. If you help
+direct them to the right databases, I'll
+give you the MUG.
+
+
+PHIND:
+
+Sound fair?
+
+
+PHIND:
+
+Wow! You're pretty good at this!
+
+
+PHIND:
+
+Fair's fair, here you go.
+
+
+PHIND:
+
+Our catalog search showed that the last
+RELIC is in the CASTLE OF STACKS. Let
+me see...
+
+
+PHIND:
+
+Okay, it looks like the directions have
+been included her ein the catalog record.
+
+
+PHIND:
+
+Remember these! Any wrong durn in the 
+STACKS could leave you wandering aimlessly
+for eternity.
+
+
+PHIND:
+
+Alright, you'll head down to the lowest
+and then the directions are...
+
+
+PHIND:
+
+You can find the door to the STACKS
+just up those stairs, at the back of
+the room.
+
+
+PHIND:
+
+Have a good quest!
+
+
+ANTELOPE:
+
+Is an antelope a document?
+
+
+???:
+
+Ah, hello there. Are you lost?
+Can I help you?
+
+
+???:
+
+Ah, did the Reference Librarians send
+you? That was kinda harsh.
+
+
+DEWEY:
+
+I'm Librarian Commander Dewey of the
+Stacks Brigade, but you can just call
+me Dewey.
+
+
+DEWEY:
+
+What item were you looking for?
+
+
+DEWEY:
+
+Oooooooohhhhhhhh... Wow. I never thought
+this day would come...
+
+
+DEWEY:
+
+There's an old story amongst the Brigade
+that one day the Once and Future Librarian
+would return to reclaim the BOOKCART.
+
+
+DEWEY:
+
+*whispering*
+
+The boys are never going to believe this.
+
+
+DEWEY:
+
+If you managed to make it through the
+Stacks on your own, it's got to be a
+sign!
+
+
+DEWEY:
+
+Even trained members of the Stacks
+Brigade usually get turned around for
+a day or two before they make it to
+their destination!
+
+
+DEWEY:
+
+Here we are!
+
+
+DEWEY:
+
+No, silly. The BOOKCART's inside the
+book. Go on! Open it!
+
+
+DEWEY:
+
+Oh... my... I-I can't BELIEVE THIS
+IS ACTUALLY HAPPENING!!
+
+
+DEWEY:
+
+Can I... Can I get your autograph?
+
+
+DEWEY:
+
+Wow...
+
+
+DEWEY:
+
+I, um, I guess you've got to be
+off then.
+
+
+DEWEY:
+
+Sure. The Stacks are a puzzle in and of
+themselves, so you pretty much already
+proved yourself as far as I'm concerned.
+
+
+DEWEY:
+
+Sure thing! Just, climb on and
+tell it where to go!
+
+
+DEWEY:
+
+Good luck on your quest!
+
+
+DEWEY:
+
+DEAN PATRICK ARCHY is no pushover,
+but I believe you can beat him.
+
+
+DEWEY:
+
+He'll be up in the ADMIN'S TOWER.
+
+
+ARCHY:
+
+Come in!
+
+
+ARCHY:
+
+I had such high hopes for you, but
+gathering the RELICA? Trying to foil
+my nefarious plot?
+
+
+ARCHY:
+
+*sighs* It just won't do.
+
+
+ARCHY:
+
+Guess I'll have to terminate your
+contract early.
+
+
+ARCHY:
+
+Oh, honestly. Can't you even try
+to finish the game? After all, you
+got this far.
+
+
+ARCHY:
+
+*sigh* Well, it doesn't matter anymore.
+I have work to do.
+
+
+ARCHY:
+
+Come in!
+
+
+ARCHY:
+
+Come now, surely you didn't think I was
+that foolish.
+
+
+ARCHY:
+
+Ah, well, I suppose this is where your
+quest ends.
+
+
+ARCHY:
+
+You will pay for your treachery!

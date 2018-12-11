@@ -6,13 +6,34 @@ import time
 from graphics import *
 
 
+class Button:
+    """base class for buttons"""
+
+    def __init__(self, name):
+        self.name = name
+
+    def outline(self, x1, y1, x2, y2, win):
+        self.outline = Rectangle(Point(x1, y1), Point(x2, y2)).draw(win)
+        return self.outline
+
+    def label(self, name, x1, y1, win):
+        self.label = Text(Point(x1, y1), name)
+        self.label.setFace('courier')
+        self.label.draw(win)
+        return self.label
+
+    def clickButton(self, point, rectangle):
+        ll = rectangle.getP1()
+        ur = rectangle.getP2()
+        return ll.getX() < point.getX() < ur.getX() and ll.getY() < point.getY() < ur.getY()
+
 class Level:
     """base class for all levels"""
 
     def __init__(self, name):
         self.name = name
 
-    def dialog(self, dialog, sleeptime):
+    def dialog(self, dialog, sleeptime, win):
         self.dialogbloc = Text(Point(4.875, 2.875), dialog)
         self.dialogbloc.setFace('courier')
         self.dialogbloc.setSize(20)
@@ -21,7 +42,7 @@ class Level:
         self.dialogbloc.undraw()
         return self.dialogbloc
 
-    def narration(self, narration, sleeptime):
+    def narration(self, narration, sleeptime, win):
         self.narrationbloc = Text(Point(4.875, 2.875), narration)
         self.narrationbloc.setFace('courier')
         self.narrationbloc.setSize(20)
@@ -31,14 +52,14 @@ class Level:
         self.narrationbloc.undraw()
         return self.narrationbloc
 
-    def prompt(self, prompt):
+    def prompt(self, prompt, win):
         self.promptbloc = Text(Point(2.5, 0.75), prompt)
         self.promptbloc.setFace('courier')
         self.promptbloc.setSize(20)
         self.promptbloc.draw(win)
         return self.promptbloc
 
-    def reply(self):
+    def reply(self, win):
         self.responsebloc = Entry(Point(5.375, 0.75), 30)
         self.responsebloc.setText('')
         self.responsebloc.setFill('white')
@@ -52,22 +73,35 @@ class Level:
         self.inventory.append(relic)
         return self.inventory
 
-    def titlecard(self, titlecard_file):
+    def titlecard(self, titlecard_file, win):
         self.titlecard = Image(Point(4, 2.5), titlecard_file)
         self.titlecard.draw(win)
         time.sleep(8)
         self.titlecard.undraw()
 
 
+class Menu:
+    """Main Menu"""
+
+    def __init__(self):
+        self.name = "Library Quest"
+
+    def playLevel(self, button):
+        self.play_button_outline = button.outline()
+        self.play_button_label = button.label()
+        self.play_button
+
+    # def seeCredits(self, button):
+
+
+
 class Intro(Level):
     """Introduction class"""
 
-    def __init__(self, person_pic1, person_pic2):
-        self.agnes_pic = Image(Point(1.25, 3.75), person_pic1)
-        self.clarence_pic = Image(Point(1.25, 3.75), person_pic2)
+    def __init__(self):
         super().__init__("Introduction")
 
-    def playerName(self, prompt):
+    def playerName(self, prompt, win):
         self.promptbloc = Text(Point(2.5, 0.75), prompt)
         self.promptbloc.setFace('courier')
         self.promptbloc.setSize(20)
@@ -81,7 +115,7 @@ class Intro(Level):
         self.promptbloc.undraw()
         return self.player_name
 
-    def playerClass(self, prompt):
+    def playerClass(self, prompt, win):
         self.promptbloc = Text(Point(2.5, 0.75), prompt)
         self.promptbloc.setFace('courier')
         self.promptbloc.setSize(20)
@@ -99,13 +133,10 @@ class Intro(Level):
 class Lair(Level):
     """Archivist's Lair class"""
 
-    def __init__(self, person_pic, relic_pic, relic):
-        self.archivist_pic = Image(Point(1.25, 3.75), person_pic)
-        self.cardigan_pic = Image(Point(1.25, 3.75), relic_pic)
-        self.cardigan = relic
+    def __init__(self):
         super().__init__("Archvist's Lair")
 
-    def puzzle(self):
+    def puzzle(self, win):
         puzzlespace = Rectangle(Point(1.25, 2.25), Point(2.75, 3.75))
         puzzlespace.setWidth(2)
         puzzlespace.draw(win)
@@ -238,13 +269,10 @@ class Lair(Level):
 class Dungeon(Level):
     """Cataloger's Dungeon class"""
 
-    def __init__(self, person_pic, relic_pic, relic):
-        self.cataloger_pic = Image(Point(1.25, 3.75), person_pic)
-        self.spectacles_pic = Image(Point(1.25, 3.75), relic_pic)
-        self.spectacles = relic
+    def __init__(self):
         super().__init__("Cataloger's Dungeon")
 
-    def puzzle(self):
+    def puzzle(self, win):
         puzzlespace = Rectangle(Point(1.25, 1.75), Point(3.25, 3.75))
         puzzlespace.setWidth(2)
         puzzlespace.draw(win)
@@ -373,13 +401,10 @@ class Dungeon(Level):
 class Tavern(Level):
     """Reference Tavern class"""
 
-    def __init__(self, person_pic, relic_pic, relic):
-        self.reference_pic = Image(Point(1.25, 3.75), person_pic)
-        self.mug_pic = Image(Point(1.25, 3.75), relic_pic)
-        self.mug = relic
+    def __init__(self):
         super().__init__("Reference Tavern")
 
-    def puzzle(self):
+    def puzzle(self, win):
         puzzlespace = Rectangle(Point(1.25, 1.25), Point(3.75, 3.75))
         puzzlespace.setWidth(2)
         puzzlespace.draw(win)
@@ -535,18 +560,12 @@ class Tavern(Level):
 class Stacks(Level):
     """Castle of Stacks class"""
 
-    def __init__(self, person_pic, relic_pic, relic):
-        self.shelver_pic = Image(Point(1.25, 3.75), person_pic)
-        self.bookcart_pic = Image(Point(1.25, 3.75), relic_pic)
-        self.bookcart = relic
+    def __init__(self):
         super().__init__("Castle of Stacks")
 
 
 class Tower(Level):
     """Admin's Tower Class"""
 
-    def __init__(self, person_pic, relic_pic, relic):
-        self.dean_pic = Image(Point(1.25, 3.75), person_pic)
-        self.tome_pic = Image(Point(1.25, 3.75), relic_pic)
-        self.tome = relic
+    def __init__(self):
         super().__init__("Admin's Tower")

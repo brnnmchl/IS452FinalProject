@@ -7,25 +7,51 @@ from graphics import *
 
 
 class Button:
-    """base class for buttons"""
 
-    def __init__(self, name):
-        self.name = name
+    """A button is a labeled rectangle in a window.
+    It is activated or deactivated with the activate()
+    and deactivate() methods. The clicked(p) method
+    returns true if the button is active and p is inside it."""
 
-    def outline(self, x1, y1, x2, y2, win):
-        self.outline = Rectangle(Point(x1, y1), Point(x2, y2)).draw(win)
-        return self.outline
+    def __init__(self, center, width, height, label, color, win):
+        """ Creates a rectangular button, eg:
+        qb = Button(myWin, Point(30,25), 20, 10, 'Quit') """
 
-    def label(self, name, x1, y1, win):
-        self.label = Text(Point(x1, y1), name)
-        self.label.setFace('courier')
+        w,h = width/2.0, height/2.0
+        x,y = center.getX(), center.getY()
+        self.xmax, self.xmin = x+w, x-w
+        self.ymax, self.ymin = y+h, y-h
+        p1 = Point(self.xmin, self.ymin)
+        p2 = Point(self.xmax, self.ymax)
+        self.rect = Rectangle(p1,p2)
+        self.rect.setFill(color)
+        self.rect.draw(win)
+        self.label = Text(center, label)
+        self.label.setFace("courier")
         self.label.draw(win)
-        return self.label
+        self.deactivate()
 
-    def clickButton(self, point, rectangle):
-        ll = rectangle.getP1()
-        ur = rectangle.getP2()
-        return ll.getX() < point.getX() < ur.getX() and ll.getY() < point.getY() < ur.getY()
+    def clicked(self, p):
+        """ RETURNS true if button active and p is inside"""
+        return self.active and \
+               self.xmin <= p.getX() <= self.xmax and \
+               self.ymin <= p.getY() <= self.ymax
+
+    def getLabel(self):
+        """RETURNS the label string of this button."""
+        return self.label.getText()
+
+    def activate(self):
+        """Sets this button to 'active'."""
+        self.label.setFill('black')
+        self.rect.setWidth(2)
+        self.active = 1
+
+    def deactivate(self):
+        """Sets this button to 'inactive'."""
+        self.label.setFill('darkgrey')
+        self.rect.setWidth(1)
+        self.active = 0
 
 class Level:
     """base class for all levels"""
@@ -64,11 +90,9 @@ class Level:
         self.responsebloc.setText('')
         self.responsebloc.setFill('white')
         self.responsebloc.draw(win)
-        win.getMouse()
-        self.responsebloc.undraw()
         return self.responsebloc
 
-    def setInventory(self, player_inventory, relic):
+    def addInventory(self, player_inventory, relic):
         self.inventory = player_inventory
         self.inventory.append(relic)
         return self.inventory
@@ -79,6 +103,11 @@ class Level:
         time.sleep(8)
         self.titlecard.undraw()
 
+    def setIcon(self, picture, win):
+        self.icon = Image(Point(1.25, 3.75), picture)
+        self.icon.draw(win)
+        return self.icon
+
 
 class Menu:
     """Main Menu"""
@@ -86,13 +115,35 @@ class Menu:
     def __init__(self):
         self.name = "Library Quest"
 
-    def playLevel(self, button):
-        self.play_button_outline = button.outline()
-        self.play_button_label = button.label()
-        self.play_button
+    def startScreen(self, text, win):
+        self.start_screen = Text(Point(4.0, 3.5), text)
+        self.start_screen.setFace("courier")
+        self.start_screen.setSize(20)
+        self.start_screen.draw(win)
+        return self.start_screen
 
-    # def seeCredits(self, button):
+    def startNarration(self, text, sleeptime, win):
+        self.intro = Text(Point(4.0, 2.5), text)
+        self.intro.setFace("courier")
+        self.intro.setStyle('italic')
+        self.intro.setSize(20)
+        self.intro.draw(win)
+        time.sleep(sleeptime)
+        self.intro.undraw()
 
+    def startPrompt(self, prompt, win):
+        self.start_prompt = Text(Point(3.0, 2.5), prompt)
+        self.start_prompt.setFace('courier')
+        self.start_prompt.setSize(20)
+        self.start_prompt.draw(win)
+        return self.start_prompt
+
+    def startReply(self, win):
+        self.start_reply = Entry(Point(4.5, 2.5), 5)
+        self.start_reply.setText('')
+        self.start_reply.setFill('white')
+        self.start_reply.draw(win)
+        return self.start_reply
 
 
 class Intro(Level):
@@ -110,9 +161,6 @@ class Intro(Level):
         self.player_name.setText('')
         self.player_name.setFill('white')
         self.player_name.draw(win)
-        win.getMouse()
-        self.player_name.undraw()
-        self.promptbloc.undraw()
         return self.player_name
 
     def playerClass(self, prompt, win):
@@ -124,10 +172,26 @@ class Intro(Level):
         self.player_class.setText('')
         self.player_class.setFill('white')
         self.player_class.draw(win)
-        win.getMouse()
-        self.player_class.undraw()
-        self.promptbloc.undraw()
         return self.player_class
+
+    def setInventory(self, player_class):
+        if player_class == 'cataloger':
+            self.player_inventory = ['MLIS', 'Student Debt', 'One (1) printed copy of the\nfull MARC21 documentation']
+        elif player_class == 'subject specialist':
+            self.player_inventory = ['MLIS', 'Student Debt', "One (1) Master's or Doctorate in\na field no one else has heard of"]
+        elif player_class == 'archivist':
+            self.player_inventory = ['MLIS', 'Student Debt', 'One (1) pocket full of 60 year old\npaperclips and binderclips']
+        elif player_class == 'reference librarian':
+            self.player_inventory = ['MLIS', 'Student Debt', 'One (1) enchanted Customer Service mask']
+        elif player_class == 'youth services librarian':
+            self.player_inventory = ['MLIS', 'Student Debt', 'One (1) baggie of crafting supplies']
+        elif player_class == 'adult services librarian':
+            self.player_inventory = ['MLIS', 'Student Debt', 'One (1) "Computers for Dummies" book']
+        elif player_class == 'instruction librarian':
+            self.player_inventory = ['MLIS', 'Student Debt', 'One (1) heavily annotated lesson plan']
+        else:
+            self.player_inventory = ['Notebook filled with strange symbols', 'Invisible pen', 'Arcane talisman']
+        return self.player_inventory
 
 
 class Lair(Level):

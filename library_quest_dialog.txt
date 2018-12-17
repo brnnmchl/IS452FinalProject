@@ -57,8 +57,8 @@ locked it in the ADMIN'S TOWER!
 
 AGNES:
 
-Oh, i'ts too horrible...
-and with the LIBRARY RELIC S
+Oh, it's too horrible...
+and with the LIBRARY RELICS
 scattered throughout the Library...
 Whatever shall we do?
 
@@ -79,6 +79,7 @@ CLARENCE:
 
 Four magical treasures that grant
 the user incredible powers.
+
 
 CLARENCE:
 

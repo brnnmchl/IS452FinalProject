@@ -13,7 +13,7 @@ class Button:
     and deactivate() methods. The clicked(p) method
     returns true if the button is active and p is inside it."""
 
-    def __init__(self, center, width, height, label, color, win):
+    def __init__(self, center, width, height, label, color, size, win):
         """ Creates a rectangular button, eg:
         qb = Button(myWin, Point(30,25), 20, 10, 'Quit') """
 
@@ -28,6 +28,7 @@ class Button:
         self.rect.draw(win)
         self.label = Text(center, label)
         self.label.setFace("courier")
+        self.label.setSize(size)
         self.label.draw(win)
         self.deactivate()
 
@@ -52,6 +53,10 @@ class Button:
         self.label.setFill('darkgrey')
         self.rect.setWidth(1)
         self.active = 0
+
+    def remove(self):
+        self.label.undraw()
+        self.rect.undraw()
 
 class Level:
     """base class for all levels"""
@@ -103,17 +108,17 @@ class Level:
         time.sleep(8)
         self.titlecard.undraw()
 
-    def setIcon(self, picture, win):
+    def setIcon(self, picture):
         self.icon = Image(Point(1.25, 3.75), picture)
-        self.icon.draw(win)
         return self.icon
 
 
-class Menu:
+class Menu(Level):
     """Main Menu"""
 
     def __init__(self):
         self.name = "Library Quest"
+        super().__init__("Main Menu")
 
     def startScreen(self, text, win):
         self.start_screen = Text(Point(4.0, 3.5), text)
@@ -152,27 +157,27 @@ class Intro(Level):
     def __init__(self):
         super().__init__("Introduction")
 
-    def playerName(self, prompt, win):
-        self.promptbloc = Text(Point(2.5, 0.75), prompt)
-        self.promptbloc.setFace('courier')
-        self.promptbloc.setSize(20)
-        self.promptbloc.draw(win)
-        self.player_name = Entry(Point(5.375, 0.75), 30)
-        self.player_name.setText('')
-        self.player_name.setFill('white')
-        self.player_name.draw(win)
-        return self.player_name
-
-    def playerClass(self, prompt, win):
-        self.promptbloc = Text(Point(2.5, 0.75), prompt)
-        self.promptbloc.setFace('courier')
-        self.promptbloc.setSize(20)
-        self.promptbloc.draw(win)
-        self.player_class = Entry(Point(5.375, 0.75), 30)
-        self.player_class.setText('')
-        self.player_class.setFill('white')
-        self.player_class.draw(win)
-        return self.player_class
+    # def playerName(self, prompt, win):
+    #     self.promptbloc = Text(Point(2.5, 0.75), prompt)
+    #     self.promptbloc.setFace('courier')
+    #     self.promptbloc.setSize(20)
+    #     self.promptbloc.draw(win)
+    #     self.player_name = Entry(Point(5.375, 0.75), 30)
+    #     self.player_name.setText('')
+    #     self.player_name.setFill('white')
+    #     self.player_name.draw(win)
+    #     return self.player_name
+    #
+    # def playerClass(self, prompt, win):
+    #     self.promptbloc = Text(Point(2.5, 0.75), prompt)
+    #     self.promptbloc.setFace('courier')
+    #     self.promptbloc.setSize(20)
+    #     self.promptbloc.draw(win)
+    #     self.player_class = Entry(Point(5.375, 0.75), 30)
+    #     self.player_class.setText('')
+    #     self.player_class.setFill('white')
+    #     self.player_class.draw(win)
+    #     return self.player_class
 
     def setInventory(self, player_class):
         if player_class == 'cataloger':
@@ -297,35 +302,39 @@ class Lair(Level):
         finalanswer3.setFace('courier')
         finalanswer3.draw(win)
 
+        answers_one = [answer1, answer2, answer3]
+
         finish_puzzle = prompt('Click "Submit" to finish. >')
 
-        win.getMouse()
+        clickPoint = win.getMouse()
 
-        puzzlespace.undraw()
-        latline1.undraw()
-        latline2.undraw()
-        latline3.undraw()
-        latline4.undraw()
-        longline1.undraw()
-        longline2.undraw()
-        longline3.undraw()
-        longline4.undraw()
-        leftlabel1.undraw()
-        leftlabel2.undraw()
-        leftlabel3.undraw()
-        toplabel1.undraw()
-        toplabel2.undraw()
-        toplabel3.undraw()
-        hints.undraw()
-        name1.undraw()
-        name2.undraw()
-        name3.undraw()
-        finalanswer1.undraw()
-        finalanswer2.undraw()
-        finalanswer3.undraw()
-        finish_puzzle.undraw()
-
-        answers_one = [answer1, answer2, answer3]
+        submit = Button(Point(7.25, 0.625), 0.5, 0.25, 'Submit', 'pale green', 12, win)
+        submit.activate()
+        if submit.clicked(clickPoint):
+            puzzlespace.undraw()
+            latline1.undraw()
+            latline2.undraw()
+            latline3.undraw()
+            latline4.undraw()
+            longline1.undraw()
+            longline2.undraw()
+            longline3.undraw()
+            longline4.undraw()
+            leftlabel1.undraw()
+            leftlabel2.undraw()
+            leftlabel3.undraw()
+            toplabel1.undraw()
+            toplabel2.undraw()
+            toplabel3.undraw()
+            hints.undraw()
+            name1.undraw()
+            name2.undraw()
+            name3.undraw()
+            finalanswer1.undraw()
+            finalanswer2.undraw()
+            finalanswer3.undraw()
+            finish_puzzle.undraw()
+            submit.remove()
 
         return answers_one
 

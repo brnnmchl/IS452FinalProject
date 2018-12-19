@@ -333,6 +333,7 @@ if play.clicked(clickPoint):
                                                     textbox_outline.undraw()
                                                     answers_one = lair.puzzle(win)
                                                     if answers_one == ['hollinger box', 'microspatula', 'cotton gloves']:
+                                                        textbox_outline.draw(win)
                                                         archivist.draw(win)
                                                         lair.dialog(dialog_list[34], 5.5, win)
                                                         lair.dialog(dialog_list[35], 4, win)
@@ -359,7 +360,7 @@ if play.clicked(clickPoint):
                                                             "I've got far to much processing to do\n" \
                                                             "to be babysitting a new " + player_class + ".", 7, win)
                                                         lair.dialog(dialog_list[38], 7, win)
-                                                        lair.dialgo(dialog_list[39], 3, win)
+                                                        lair.dialog(dialog_list[39], 3, win)
                                                         archivist.undraw()
 
                                                         lair.narration(narration_list[19], 5, win)
@@ -377,9 +378,138 @@ if play.clicked(clickPoint):
                                                             if takestairs == "yes":
                                                                 ## Cataloger's Dungeon
                                                                 lair.titlecard('dungeon.gif', win)
+                                                                dungeon = Dungeon()
+                                                                dungeon.narration(narration_list[21], 5, win)
+                                                                dungeon.narration(narration_list[22], 8, win)
+                                                                dungeon.narration(narration_list[23], 3, win)
+                                                                dungeon.narration(narration_list[24], 10, win)
 
+                                                                prompt9 = dungeon.prompt('Open the door? >', win)
+                                                                reply9 = dungeon.reply(win)
+                                                                submit.activate()
+                                                                clickPoint = win.getMouse()
+                                                                if submit.clicked(clickPoint):
+                                                                    prompt9.undraw()
+                                                                    reply9.undraw()
+                                                                    submit.deactivate()
+                                                                    open_door = reply9.getText().lower()
+                                                                    if open_door == "yes":
+                                                                        dungeon.narration(narration_list[25], 7, win)
+                                                                        dungeon.narration(narration_list[26], 7, win)
+                                                                        dungeon.narration(narration_list[27], 7, win)
+                                                                        dungeon.narration(narration_list[28], 5, win)
 
+                                                                        cataloger = dungeon.setIcon("cataloger.gig", win)
+                                                                        cataloger.draw(win)
+                                                                        dungeon.dialog(dialog_list[40], 3, win)
+                                                                        dungeon.narration(narration_list[29], 10, win)
+                                                                        cataloger.undraw()
 
+                                                                        dungeon.dialog(str(player_name.upper() + ":\n\n"
+                                                                            "I-I'm on a quest."), 3, win)
+
+                                                                        cataloger.draw(win)
+                                                                        dungeon.dialog(dialog_list[41], 6, win)
+                                                                        cataloger.undraw()
+
+                                                                        dungeon.dialog(str(player_name.upper() + ":\n\n"
+                                                                            "I'm sorry, I promise I won't bother\n"
+                                                                            "you long. I'm just trying to collect\n"
+                                                                            "the LIBRARY RELICS to destroy the\n"
+                                                                            "TOME OF LENDING."), 8, win)
+
+                                                                        cataloger.draw(win)
+                                                                        dungeon.narration(narration_list[30], 7, win)
+                                                                        dungeon.dialog(dialog_list[42], 4.5, win)
+                                                                        cataloger.undraw()
+
+                                                                        dungeon.dialog(str(player_name.upper() + ":\n\n"
+                                                                            "Um... sure. Yes. Those."), 4, win)
+
+                                                                        cataloger.draw(win)
+                                                                        dungeon.dialog(dialog_list[43], 8, win)
+                                                                        cataloger.undraw()
+
+                                                                        dungeon.dialog(str(player_name.upper() + ":\n\n"
+                                                                            "Please! I just want to help\n"
+                                                                            "our patrons!"), 5, win)
+
+                                                                        cataloger.draw(win)
+                                                                        dungeon.narration(narration_list[31], 4, win)
+                                                                        dungeon.dialog(dialog_list[44], 6, win)
+                                                                        dungeon.dialog(dialog_list[45], 5, win)
+                                                                        dungeon.dialog(dialog_list[46], 10, win)
+                                                                        dungeon.dialog(dialog_list[47], 7, win)
+                                                                        cataloger.undraw()
+
+                                                                        prompt10 = dungeon.prompt("Play the puzzle? >", win)
+                                                                        reply10 = dungeon.reply(win)
+                                                                        submit.activate()
+                                                                        clickPoint = win.getMouse()
+                                                                        if submit.clicked(clickPoint):
+                                                                            prompt10.undraw()
+                                                                            reply10.undraw()
+                                                                            submit.deactivate()
+                                                                            playpuzzle = reply10.getText().lower()
+                                                                            if playpuzzle == "yes":
+                                                                                dungeon.dialog(str(player_name.upper() + ":\n\n"
+                                                                                    "I'll do my best."), 3, win)
+
+                                                                                textbox_outline.undraw()
+                                                                                answers_two = dungeon.puzzle(win)
+                                                                                if answers_two == ['rare books', 'serials', 'monographs', 'music']:
+                                                                                    textbox_outline.draw(win)
+                                                                                    cataloger.draw(win)
+                                                                                    dungeon.dialog(dialog_list[48], 4, win)
+                                                                                    dungeon.dialog(dialog_list[49], 4, win)
+                                                                                    cataloger.undraw()
+
+                                                                                    spectacles_pic = dungeon.setIcon('spectacles.gif', win)
+                                                                                    spectacles_pic.draw(win)
+                                                                                    dungeon.addInventory(player_inventory, spectacles)
+                                                                                    dungeon.narration(narration_list[32], 5, win)
+                                                                                    dungeon.narration(player_name.upper() + "'s Inventory\n\n" + player_inventory[0] + '\n' + player_inventory[1] + '\n' + player_inventory[2] + '\n' + player_inventory[3] + '\n' + player_inventory[4], 10, win)
+                                                                                    spectacles_pic.undraw()
+
+                                                                                    cataloger.draw(win)
+                                                                                    dungeon.dialog(dialog_list[50], 7, win)
+                                                                                    dungeon.dialog(dialog_list[51], 7, win)
+                                                                                    dungeon.dialog(dialog_list[52], 5, win)
+                                                                                    dungeon.narration(narration_list[33], 7, win)
+                                                                                    dungeon.narration(narration_list[34], 9, win)
+                                                                                    dungeon.narration(narration_list[35], 7, win)
+                                                                                    dungeon.dialog(dialog_list[53], 7, win)
+                                                                                    cataloger.undraw()
+
+                                                                                    dungeon.dialog(str(player_name.upper() + ":\n\n"
+                                                                                            "Thanks."), 3, win)
+
+                                                                                    prompt11 = dungeon.prompt("Step through the portal? >", win)
+                                                                                    reply11 = dungeon.reply(win)
+                                                                                    submit.activate()
+                                                                                    clickPoint = win.getMouse()
+                                                                                    if submit.clicked(clickPoint):
+                                                                                        prompt11.undraw()
+                                                                                        reply11.undraw()
+                                                                                        submit.deactivate()
+                                                                                        through_portal = reply11.getText().lower()
+                                                                                        if through_portal == "yes":
+                                                                                            ## Reference Tavern
+                                                                                            dungeon.titlecard('tavern.gif', win)
+
+                                                                                        else:
+                                                                                            dungeon.narration(bad_endings_list[6], 9, win)
+                                                                                            credit()
+                                                                                else:
+                                                                                    textbox_outline.draw(win)
+                                                                                    dungeon.narration(bad_endings_list[7], 13, win)
+                                                                                    credit()
+                                                                            else:
+                                                                                dungeon.narration(bad_endings_list[7], 13, win)
+                                                                                credit()
+                                                                    else:
+                                                                        dungeon.narration(bad_endings_list[8], 10, win)
+                                                                        credit()
                                                             else:
                                                                 prompt8.undraw()
                                                                 reply8.undraw()

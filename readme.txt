@@ -17,16 +17,25 @@ the way, gather items to help you on your quest.
 GAME FILES
 
 To play Library Quest, the following files will beed to be downloaded:
-	[list of necessary files]
+	graphics.py
+	lq_classes.py
+	Library_Quest.py
+	all .gif files
 
-Find these files at [github link]
+Find these files at [https://github.com/brnnmchl/IS452FinalProject].
 
 
 GAME PLAY
 
 Decisions:
 	At some points in the game, players will be asked yes or no questions
-	to move forward in the story. 
+	to move forward in the story.
+
+	Most entry boxes will require a [yes] or [no] response. Any additional
+	entry boxes will make it clear with either the prompt or a list of options
+	what is expected as a response.
 	
 Logic puzzles:
-	[tbd]
+	For the puzzles, use the grid as a guide to work out the answers before
+	entering them one by one into the entry boxes. Click "Submit" after every
+	entry.

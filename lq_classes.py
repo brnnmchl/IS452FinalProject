@@ -547,7 +547,7 @@ class Tavern(Level):
                                     "2) Barry is curious about thirdwave feminist theory\n"
                                     "and wants to find some articles to read on the topic.\n\n"
                                     "3) Merle is in a rush to finish his final paper on\n"
-                                    "species of beans adn needs four more citations.\n\n"
+                                    "species of beans and needs four more citations.\n\n"
                                     "4) Angus is concerned about his parents' habit of\n"
                                     "personifying bird figurines and wants to know more\n"
                                     "about hallucinations.")

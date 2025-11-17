@@ -16,7 +16,7 @@ the way, gather items to help you on your quest.
 
 GAME FILES
 
-To play Library Quest, the following files will beed to be downloaded:
+To play Library Quest, the following files will need to be downloaded:
 	graphics.py
 	lq_classes.py
 	Library_Quest.py

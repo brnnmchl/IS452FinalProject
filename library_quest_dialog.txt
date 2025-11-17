@@ -487,12 +487,12 @@ me see...
 PHIND:
 
 Okay, it looks like the directions have
-been included her ein the catalog record.
+been included here in the catalog record.
 
 
 PHIND:
 
-Remember these! Any wrong durn in the 
+Remember these! Any wrong turn in the 
 STACKS could leave you wandering aimlessly
 for eternity.
 
@@ -534,7 +534,7 @@ you? That was kinda harsh.
 
 DEWEY:
 
-I'm Librarian Commander Dewey of the
+I'm Librarian Commander DEWEY of the
 Stacks Brigade, but you can just call
 me Dewey.
 
@@ -649,7 +649,7 @@ Come in!
 ARCHY:
 
 I had such high hopes for you, but
-gathering the RELICA? Trying to foil
+gathering the RELICS? Trying to foil
 my nefarious plot?
 
 
